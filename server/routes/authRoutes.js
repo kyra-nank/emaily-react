@@ -9,7 +9,7 @@ module.exports = (app) => {
     })
   );
 
-  // code available inside the URL
+  // verification code available inside the URL
   app.get('/auth/google/callback', passport.authenticate('google'));
 
   app.get('/api/logout', (req, res) => {
