@@ -27,5 +27,17 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);  // passes app in as an arg to the exported func immediately
 require('./routes/billingRoutes')(app); // export func with app as arg
 
+if (process.env.NODE_ENV === 'production') {
+  // Express will serve up specific production assets like main.js, or main.css
+  app.use(express.static('/client/build'));
+
+  // Express will serve up the index.html file if route not recognized
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+
+}
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
