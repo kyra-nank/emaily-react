@@ -24,7 +24,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
+      <nav style={{ padding: "0 20px" }}>
         <div className="nav-wrapper">
           <Link
             to={this.props.auth ? '/surveys' : '/'}
