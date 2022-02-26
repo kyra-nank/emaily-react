@@ -4,15 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
-
-const Dashboard = function () {
-  return <h2>Dashboard</h2>
-}
-const SurveyNew = function () {
-  return <h2>SurveyNew</h2>
-}
-
-
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
 
@@ -26,13 +19,15 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
+            <div style={{ padding: "20px 50px" }}>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/surveys" component={Dashboard} />
+              <Route path="/surveys/new" component={SurveyNew} />
+            </div>
           </div>
         </BrowserRouter>
       </div>
-    )
+    );
   }
 }
 

@@ -8,7 +8,7 @@ const Landing = function () {
       </h1>
       Collect feedback from your users.
     </div>
-  )
-}
+  );
+};
 
 export default Landing;
