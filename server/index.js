@@ -4,16 +4,16 @@ const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
-const keys = require('./config/keys')
-require('./models/User')
-require('./models/Survey')
+const keys = require('./config/keys');
+require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use(
   cookieSession({
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
   const path = require('path');
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
+  });
 
 }
 
