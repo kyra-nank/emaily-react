@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SurveyList from './surveys/SurveyList';
 
 const Dashboard = function () {
   return (
     <div>
-      Dashboard
+      <SurveyList />
       <div className="fixed-action-btn">
         <Link
-          class="btn-floating btn-large waves-effect waves-light red"
+          className="btn-floating btn-large waves-effect waves-light red"
           to="/surveys/new"
         >
-          <i class="material-icons">add</i>
+          <i className="material-icons">add</i>
         </Link>
       </div>
     </div>
